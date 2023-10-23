@@ -1,2 +1,1 @@
-# RPSLS
-Rock, Paper, Scissors, Lizard, Spock
+# RPSLS_FSF_CSharp_Starter
