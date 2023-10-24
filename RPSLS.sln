@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSLS", "RPSLS\RPSLS.csproj", "{CDF2AF7D-56BE-476E-908C-A3107BC43816}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSLSGame", "RPSLS\RPSLSGame.csproj", "{CDF2AF7D-56BE-476E-908C-A3107BC43816}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
