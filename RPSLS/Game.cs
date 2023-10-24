@@ -45,28 +45,30 @@ namespace RPSLS
         public void CreatePlayerObjects(int numberOfHumanPlayers)
         {
             //give value to playerOne and playerTwo
-            if (numberOfHumanPlayers != 1)
-               { 
-                Console.WriteLine("Player One please enter your name");
-                string playerOneinput = Console.ReadLine();
-                Player playerOne = new HumanPlayer(playerOneinput);
-                Player playerTwo = new ComputerPlayer("");
-
-               }
-            if (numberOfHumanPlayers != 2)
+            if (numberOfHumanPlayers == 1)
             {
                 Console.WriteLine("Player One please enter your name");
-                string playerOneinput = Console.ReadLine();
-                Player playerOne = new HumanPlayer(playerOneinput);
-                Console.WriteLine("");
+                string playerOneInput = Console.ReadLine();
+                Player playerOne = new HumanPlayer(playerOneInput);
+                Player playerTwo = new ComputerPlayer("R2D2");
+
+            }
+            else if (numberOfHumanPlayers == 2)
+            {
+                Console.WriteLine("Player One please enter your name");
+                string playerOneInput = Console.ReadLine();
+                Player playerOne = new HumanPlayer(playerOneInput);
+                Console.WriteLine("Player Two please enter your name");
+                string playerTwoInput = Console.ReadLine();
+                Player playerTwo = new HumanPlayer(playerTwoInput);
 
             }
 
         }
 
         public void CompareGestures()
-        {
-
+        { if (playerOne HumanPlayer chosenGesture)
+            Console.WriteLine($"{playerOne} chooses {HumanPlayer.ChosenGesture}"); 
         }
 
         public void DisplayGameWinner()
@@ -78,6 +80,7 @@ namespace RPSLS
         {
             WelcomeMessage();
             ChooseNumberOfHumanPlayers();
+            CreatePlayerObjects(1);
         }
     }
 }

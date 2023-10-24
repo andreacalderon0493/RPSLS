@@ -7,8 +7,6 @@ namespace RPSLS
 		public HumanPlayer(string name)
 		{
 			this.name = name;
-			Console.WriteLine($"Please enter your name");
-			string userName = Console.ReadLine();
 			
 
 		}
@@ -19,8 +17,9 @@ namespace RPSLS
 			foreach (var gesture in gestures)
 			{
 				Console.WriteLine(gesture);
-			}
+            }
             string chosenGesture = Console.ReadLine();
+
         }
     }
 }

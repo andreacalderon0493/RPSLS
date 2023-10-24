@@ -6,6 +6,7 @@ namespace RPSLS
         public ComputerPlayer(string name) 
 		{
 			this.name = "R2D2";
+            Console.WriteLine($"You will be playing against {this.name}");
             
         }
         public override void ChooseGesture()
@@ -23,9 +24,9 @@ namespace RPSLS
 
             //Use that variable as your list index to grab value from this.gestures
             
-            Console.WriteLine(gestures[randomNumber]);
+            Console.WriteLine($"{this.name} chooses {gestures[randomNumber]}");
             //set value to this.chosenGesture            //this.gestures;
-
+            this.chosenGesture = gestures[randomNumber];
 
         }
 

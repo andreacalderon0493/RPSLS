@@ -7,10 +7,7 @@
             Game game = new Game();
             game.RunGame();
 
-            ComputerPlayer computerPlayer = new ComputerPlayer("");
-            computerPlayer.ChooseGesture();
-            HumanPlayer humanPlayer = new HumanPlayer("");
-            humanPlayer.ChooseGesture();
+           
         }
     }
 }
