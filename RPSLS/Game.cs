@@ -11,12 +11,12 @@ namespace RPSLS
         //Member Variabes (HAS A)
         public Player playerOne;
         public Player playerTwo;
-        
+
 
         //Constructor
         public Game()
         {
-            
+
         }
 
         //Member Methods (CAN DO)
@@ -38,7 +38,7 @@ namespace RPSLS
 
         {
             Console.WriteLine("How many people are playing today?\n 1 or 2");
-            int numberOfHumanPlayers = int.Parse (Console.ReadLine());
+            int numberOfHumanPlayers = int.Parse(Console.ReadLine());
             return numberOfHumanPlayers;
         }
 
@@ -49,38 +49,118 @@ namespace RPSLS
             {
                 Console.WriteLine("Player One please enter your name");
                 string playerOneInput = Console.ReadLine();
-                Player playerOne = new HumanPlayer(playerOneInput);
-                Player playerTwo = new ComputerPlayer("R2D2");
+                playerOne = new HumanPlayer(playerOneInput);
+                playerTwo = new ComputerPlayer("R2D2");
 
             }
             else if (numberOfHumanPlayers == 2)
             {
                 Console.WriteLine("Player One please enter your name");
                 string playerOneInput = Console.ReadLine();
-                Player playerOne = new HumanPlayer(playerOneInput);
+                playerOne = new HumanPlayer(playerOneInput);
                 Console.WriteLine("Player Two please enter your name");
                 string playerTwoInput = Console.ReadLine();
-                Player playerTwo = new HumanPlayer(playerTwoInput);
+                playerTwo = new HumanPlayer(playerTwoInput);
 
             }
 
         }
 
         public void CompareGestures()
-        { if (playerOne HumanPlayer chosenGesture)
-            Console.WriteLine($"{playerOne} chooses {HumanPlayer.ChosenGesture}"); 
-        }
+        {
+            Console.WriteLine($"{playerOne.name} chooses {playerOne.chosenGesture}");
+            Console.WriteLine($"{playerTwo.name} chooses {playerTwo.chosenGesture}");
 
+            if (playerOne.chosenGesture == playerTwo.chosenGesture)
+            {
+                Console.WriteLine("It's a tie!");
+            }
+            else
+            {
+                switch (playerOne.chosenGesture)
+                {
+                    case "rock":
+                        if (playerTwo.chosenGesture == "scissors" || playerTwo.chosenGesture == "lizard")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins!!");
+                            playerOne.score++;
+                        }
+                        break;
+                    case "paper":
+                        if(playerTwo.chosenGesture == "rock" || playerTwo.chosenGesture == "spock" )
+                        {
+                            Console.WriteLine($"({playerOne.name} wins!");
+                            playerOne.score++;
+                        }
+                        break;
+                    case "scissors":
+                        if (playerTwo.chosenGesture == "lizard" || playerTwo.chosenGesture == "paper")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins!");
+                            playerOne.score++;
+                        }
+
+                        break;
+                    case "lizard":
+                        if(playerTwo.chosenGesture == "paper" || playerTwo.chosenGesture == "spock")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins!");
+                            playerOne.score++;
+
+                        }
+                        break;
+                    case "spock":
+                        if (playerTwo.chosenGesture == "rock" || playerTwo.chosenGesture == "scissors")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins this round!");
+                            playerOne.score++;
+                        }
+                        else 
+                        {
+                            Console.WriteLine($"{playerTwo.name} wins this round!!");
+                            playerTwo.score++;
+                        }
+                        break;
+
+
+
+
+
+                }
+            }
+        }
+       
+
+        
         public void DisplayGameWinner()
         {
+
+            if (playerOne.score > playerTwo.score)
+            {
+                Console.WriteLine($"{playerOne.name} wins!");
+            }
+            else playerOne.score < playerTwo.score
+            {
+                Console.WriteLine($"{playerTwo.name} wins!");
+            }
+
+
 
         }
 
         public void RunGame()
         {
             WelcomeMessage();
-            ChooseNumberOfHumanPlayers();
-            CreatePlayerObjects(1);
+
+            int numberOfHumans = ChooseNumberOfHumanPlayers();
+
+            CreatePlayerObjects(numberOfHumans);
+            //while loop best of 2 
+            playerOne.ChooseGesture();
+            playerTwo.ChooseGesture();
+            CompareGestures();
+        
+            DisplayGameWinner();
         }
     }
 }

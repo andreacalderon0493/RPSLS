@@ -13,12 +13,14 @@ namespace RPSLS
 
         public override void ChooseGesture()
         {
-			Console.WriteLine("Please choose a gesture of the following below ");
+			Console.WriteLine($"{this.name} Please choose a gesture of the following below ");
 			foreach (var gesture in gestures)
 			{
 				Console.WriteLine(gesture);
+                
             }
-            string chosenGesture = Console.ReadLine();
+            chosenGesture = Console.ReadLine();
+			chosenGesture = chosenGesture.ToLower(); 
 
         }
     }
