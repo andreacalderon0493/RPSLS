@@ -22,9 +22,7 @@ namespace RPSLS
 
 
 
-            //Use that variable as your list index to grab value from this.gestures
-            
-            Console.WriteLine($"{this.name} chooses {gestures[randomNumber]}");
+            //Use that variable as your list index to grab value from this.gesture
             //set value to this.chosenGesture            //this.gestures;
             this.chosenGesture = gestures[randomNumber];
 
