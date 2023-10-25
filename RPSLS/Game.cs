@@ -66,7 +66,7 @@ namespace RPSLS
             }
 
         }
-
+        //if loop to tie and else (switch loop)
         public void CompareGestures()
         {
             Console.WriteLine($"\n{playerOne.name} chooses {playerOne.chosenGesture}\n");
@@ -83,36 +83,36 @@ namespace RPSLS
                     case "rock":
                         if (playerTwo.chosenGesture == "scissors" || playerTwo.chosenGesture == "lizard")
                         {
-                            Console.WriteLine($"{playerOne.name} wins this round!!");
+                            Console.WriteLine($"{playerOne.chosenGesture} beats {playerTwo.chosenGesture}\n{playerOne.name} wins this round!!\n");
                             playerOne.score++;
                         }
                         else
                         {
-                            Console.WriteLine($"{playerTwo.name} wins this round!!");
+                            Console.WriteLine($"{playerTwo.chosenGesture} beats {playerOne.chosenGesture}\n{playerTwo.name} wins this round!!\n");
                             playerTwo.score++;
                         }
                         break;
                     case "paper":
                         if(playerTwo.chosenGesture == "rock" || playerTwo.chosenGesture == "spock" )
                         {
-                            Console.WriteLine($"({playerOne.name} wins this round!");
+                            Console.WriteLine($"({playerOne.chosenGesture} beats {playerTwo.chosenGesture}\n{playerOne.name} wins this round!\n");
                             playerOne.score++;
                         }
                         else
                         {
-                            Console.WriteLine($"{playerTwo.name} wins this round!!");
+                            Console.WriteLine($"{playerTwo.chosenGesture} beats {playerOne.chosenGesture}\n{playerTwo.name} wins this round!!\n");
                             playerTwo.score++;
                         }
                         break;
                     case "scissors":
                         if (playerTwo.chosenGesture == "lizard" || playerTwo.chosenGesture == "paper")
                         {
-                            Console.WriteLine($"{playerOne.name} wins this round!");
+                            Console.WriteLine($"{playerOne.chosenGesture} beats {playerTwo.chosenGesture}\n{playerOne.name} wins this round!\n");
                             playerOne.score++;
                         }
                         else
                         {
-                            Console.WriteLine($"{playerTwo.name} wins this round!!");
+                            Console.WriteLine($"{playerTwo.chosenGesture} beats {playerOne.chosenGesture}\n{playerTwo.name} wins this round!!\n");
                             playerTwo.score++;
                         }
 
@@ -120,25 +120,25 @@ namespace RPSLS
                     case "lizard":
                         if(playerTwo.chosenGesture == "paper" || playerTwo.chosenGesture == "spock")
                         {
-                            Console.WriteLine($"{playerOne.name} wins this round!");
+                            Console.WriteLine($"{playerOne.chosenGesture} beats {playerTwo.chosenGesture}\n{playerOne.name} wins this round!\n");
                             playerOne.score++;
 
                         }
                         else
                         {
-                            Console.WriteLine($"{playerTwo.name} wins this round!!");
+                            Console.WriteLine($"{playerTwo.chosenGesture} beats { playerOne.chosenGesture}\n{playerTwo.name} wins this round!!\n");
                             playerTwo.score++;
                         }
                         break;
                     case "spock":
                         if (playerTwo.chosenGesture == "rock" || playerTwo.chosenGesture == "scissors")
                         {
-                            Console.WriteLine($"{playerOne.name} wins this round!");
+                            Console.WriteLine($"{playerOne.chosenGesture} beats {playerTwo.chosenGesture}\n{playerOne.name} wins this round!\n");
                             playerOne.score++;
                         }
                         else 
                         {
-                            Console.WriteLine($"{playerTwo.name} wins this round!!");
+                            Console.WriteLine($"{playerTwo.chosenGesture} beats {playerOne.chosenGesture}\n{playerTwo.name} wins this round!!\n");
                             playerTwo.score++;
                         }
                         break;
